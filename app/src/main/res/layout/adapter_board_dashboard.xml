@@ -3,12 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lay"
     android:layout_width="fill_parent" android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:weightSum="1"
     android:layout_marginHorizontal="6dp"
     android:layout_marginVertical="8dp">
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -17,9 +27,9 @@
         android:id="@+id/boardIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@mipmap/barbarian_icom_round"
         app:civ_border_width="1dp"
-        app:civ_border_color="#9f78fd57"
+        app:civ_border_color="#a233e607"
         android:layout_marginTop="3dp"
         android:layout_gravity="center_horizontal"/>
 
@@ -29,14 +39,16 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="-3dp">
+            android:layout_marginTop="-2dp">
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_weight="0"
-                app:srcCompat="@drawable/star_rating" />
+                app:srcCompat="@drawable/star_rating"
+                android:layout_marginTop="-2dp"
+                android:layout_marginLeft="5dp"/>
 
             <TextView
                 android:id="@+id/rating"
@@ -44,8 +56,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="5.0"
-                android:textColor="#78fd57"
-                android:textSize="11dp" />
+                android:textColor="#a233e607"
+                android:textSize="9dp" />
 
         </LinearLayout>
 
@@ -57,13 +69,13 @@
             android:text="8 anos"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textSize="10dp"
+            android:textSize="9dp"
             android:gravity="center_horizontal"
             android:textColor="#8492A6"
             android:fontFamily="sans-serif"
             android:layout_marginTop="-3dp"/>
     </LinearLayout>
-    <LinearLayout
+        <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -127,7 +139,7 @@
                         android:layout_gravity="top"
                         android:text="Dias de jogo:"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"
                         android:fontFamily="sans-serif"/>
                     <TextView
@@ -137,7 +149,7 @@
                         android:layout_gravity="top"
                         android:text="Intervalo"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"
                         android:ellipsize="end"
                         android:maxLines="1"
@@ -167,7 +179,7 @@
                         android:layout_marginLeft="3dp"
                         android:text="Membros:"
                         android:textColor="#8492A6"
-                        android:textSize="11dp" />
+                        android:textSize="10dp" />
 
                     <TextView
                         android:id="@+id/membersTextView"
@@ -179,7 +191,7 @@
                         android:maxLines="1"
                         android:text="10/10"
                         android:textColor="#8492A6"
-                        android:textSize="11dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -202,7 +214,7 @@
                         android:layout_gravity="top"
                         android:text="Outros:"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"/>
                     <TextView
                         android:id="@+id/othersTextView"
@@ -211,7 +223,7 @@
                         android:layout_gravity="top"
                         android:text="Feminino, crianças"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"
                         android:ellipsize="end"
                         android:maxLines="1"/>
@@ -242,7 +254,7 @@
                         android:layout_gravity="top"
                         android:text="Sistema:"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"
                         android:fontFamily="sans-serif"/>
                     <TextView
@@ -250,9 +262,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="top"
-                        android:text="DeD 4.0"
+                        android:text="DND 4.0"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"
                         android:ellipsize="end"
                         android:maxLines="1"
@@ -282,7 +294,7 @@
                         android:layout_marginLeft="3dp"
                         android:text="Cenario:"
                         android:textColor="#8492A6"
-                        android:textSize="11dp" />
+                        android:textSize="10dp" />
 
                     <TextView
                         android:id="@+id/scennaryTextView"
@@ -294,7 +306,7 @@
                         android:maxLines="1"
                         android:text="Tormenta"
                         android:textColor="#8492A6"
-                        android:textSize="11dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -312,15 +324,16 @@
                         android:textColor="#fff"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="3dp"/>
+
                     <TextView
                         android:id="@+id/localText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="top"
+                        android:layout_marginLeft="3dp"
                         android:text="Local:"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
-                        android:layout_marginLeft="3dp"/>
+                        android:textSize="10dp" />
                     <TextView
                         android:id="@+id/localTextView"
                         android:layout_width="wrap_content"
@@ -328,13 +341,20 @@
                         android:layout_gravity="top"
                         android:text="Público"
                         android:textColor="#8492A6"
-                        android:textSize="11dp"
+                        android:textSize="10dp"
                         android:layout_marginLeft="3dp"
                         android:ellipsize="end"
                         android:maxLines="1"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:orientation="horizontal">
     </LinearLayout>
 
 </LinearLayout>

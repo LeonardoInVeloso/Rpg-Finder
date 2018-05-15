@@ -2,14 +2,18 @@ package sleosh.rpgfinder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
+
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import classes.Board;
 import custom.elements.BoardDashboardAdapter;
@@ -21,8 +25,14 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        
+        setSupportActionBar(myToolbar);
 
         ListView listView = (ListView) findViewById(R.id.myBoardsListView);
+
+        ListView listView2 = (ListView) findViewById(R.id.playBoardsListView);
 
         ArrayList<String> mesasName = new ArrayList<>();
 
@@ -90,6 +100,12 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
         sessionDays.add("Domingos");
         sessionDays.add("Sabados");
 
+        ArrayList<Integer> icons = new ArrayList<>();
+
+        icons.add(0x7f0c0001);
+        icons.add(0x7f0c0005);
+        icons.add(0x7f0c000a);
+
         boards = new ArrayList<>();
         for(int i = 0; i < 3; i++){
             Board a = new Board(i);
@@ -102,11 +118,17 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
             a.setFemale(female.get(i));
             a.setScenary(scenary.get(i));
             a.setSessionDay(sessionDays.get(i));
+            a.setLocal(locals.get(i));
+            a.setSystem(system.get(i));
+            a.setIcon(icons.get(i));
             boards.add(a);
         }
 
         listView.setAdapter(new BoardDashboardAdapter(this, boards));
         listView.setOnItemClickListener(this);
+
+        listView2.setAdapter(new BoardDashboardAdapter(this, boards));
+        listView2.setOnItemClickListener(this);
     }
 
     @Override
@@ -114,4 +136,38 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
         Board a = boards.get(position);
         Toast.makeText(this, "Clique na Mesa: " + a.getName(), Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_itens, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.search:
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
+
+            case R.id.profile:
+                // User chose the "Favorite" action, mark the current item
+                // as a favorite...
+                return true;
+
+            case R.id.boards:
+                // User chose the "Favorite" action, mark the current item
+                // as a favorite...
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
 }
+

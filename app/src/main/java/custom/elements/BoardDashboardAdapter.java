@@ -1,6 +1,7 @@
 package custom.elements;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,19 +61,29 @@ public class BoardDashboardAdapter extends BaseAdapter {
         TextView scenary = (TextView) view.findViewById(R.id.scennaryTextView);
 
         de.hdodenhof.circleimageview.CircleImageView img = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.boardIcon);
+
+        String color = "#DCFC6533";
+        if(a.getRating() > 4.0){
+            color = "#A233E607";
+        }else if (a.getRating() > 2.5){
+            color = "#DC0773E6";
+        }
         String others = "";
         others += (a.isBegginer())? "Iniciante;" : "";
         others += (a.isChildren())? "Crianças;" : "";
         others += (a.isFemale())? "Feminina;" : "";
         name.setText(a.getName());
         local.setText(a.getLocal());
-        publicLocal.setText((a.isPublicLocal()) ? "publico" : "privado");
+        publicLocal.setText((a.isPublicLocal()) ? "Publico" : "Privado");
         other.setText(others);
-        limitPeople.setText("7" + a.getLimitPeople());
+        limitPeople.setText("7 / " + a.getLimitPeople());
         rating.setText(String.valueOf(a.getRating()));
+        rating.setTextColor(Color.parseColor(color));
         system.setText(a.getSystem());
         scenary.setText(a.getScenary());
         days.setText(a.getSessionDay());
+        img.setImageResource(a.getIcon());
+        img.setBorderColor(Color.parseColor(color));
         return view;
     }
 }

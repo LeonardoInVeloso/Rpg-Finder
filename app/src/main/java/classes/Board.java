@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 public class Board {
     private int id;
     private String name;
-    private Image banner;
-    private Image icon;
+    private int banner;
+    private int icon;
     private String system;
     private String scenary;
     private String sessionDay;
@@ -29,7 +29,7 @@ public class Board {
     private boolean children;
     private boolean begginer;
 
-    public Board(int id, String name, Image banner, Image icon, String system, String scenary, String sessionDay, String summary, int rating, String local, boolean publicLocal, LocalDateTime created, int limitPeople, int sessions, int masterId, boolean active, boolean female, boolean children, boolean begginer) {
+    public Board(int id, String name, int banner, int icon, String system, String scenary, String sessionDay, String summary, int rating, String local, boolean publicLocal, LocalDateTime created, int limitPeople, int sessions, int masterId, boolean active, boolean female, boolean children, boolean begginer) {
         this.id = id;
         this.name = name;
         this.banner = banner;
@@ -67,19 +67,19 @@ public class Board {
         this.name = name;
     }
 
-    public Image getBanner() {
+    public int getBanner() {
         return banner;
     }
 
-    public void setBanner(Image banner) {
+    public void setBanner(int banner) {
         this.banner = banner;
     }
 
-    public Image getIcon() {
+    public int getIcon() {
         return icon;
     }
 
-    public void setIcon(Image icon) {
+    public void setIcon(int icon) {
         this.icon = icon;
     }
 
