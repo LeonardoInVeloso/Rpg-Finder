@@ -12,4 +12,7 @@
     <item android:id="@+id/search"
         android:title="Buscar mesas"
         app:showAsAction="never"/>
+    <item android:id="@+id/addBoard"
+        android:title="Criar Mesa"
+        app:showAsAction="never"/>
 </menu>

@@ -13,4 +13,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string-array name="spinnerEstadosBR">
+        <item>Rio de Janeiro</item>
+        <item>São Paulo</item>
+        <item>Bahia</item>
+        <item>Santa Catarina</item>
+    </string-array>
 </resources>

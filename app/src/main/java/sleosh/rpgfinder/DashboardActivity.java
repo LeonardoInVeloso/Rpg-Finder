@@ -1,5 +1,6 @@
 package sleosh.rpgfinder;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,7 +33,6 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
 
         ListView listView = (ListView) findViewById(R.id.myBoardsListView);
 
-        ListView listView2 = (ListView) findViewById(R.id.playBoardsListView);
 
         ArrayList<String> mesasName = new ArrayList<>();
 
@@ -126,9 +126,6 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
 
         listView.setAdapter(new BoardDashboardAdapter(this, boards));
         listView.setOnItemClickListener(this);
-
-        listView2.setAdapter(new BoardDashboardAdapter(this, boards));
-        listView2.setOnItemClickListener(this);
     }
 
     @Override
@@ -159,6 +156,13 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
             case R.id.boards:
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
+                return true;
+
+            case R.id.addBoard:
+
+                Intent i = new Intent(DashboardActivity.this,activity_board_add.class);
+                startActivity(i);
+
                 return true;
 
             default:
