@@ -19,4 +19,17 @@
         <item>Bahia</item>
         <item>Santa Catarina</item>
     </string-array>
+    <string-array name="spinnerFrequencyGameDays">
+        <item>Semanalmente</item>
+        <item>Mensalmente</item>
+    </string-array>
+    <string-array name="spinnerGameDays">
+        <item>Segundas-Feiras</item>
+        <item>Terças-Feiras</item>
+        <item>Quartas-Feiras</item>
+        <item>Quintas-Feiras</item>
+        <item>Sextas-Feiras</item>
+        <item>Sabádos</item>
+        <item>Domingos</item>
+    </string-array>
 </resources>

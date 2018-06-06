@@ -1,138 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="sleosh.rpgfinder.activity_board_add">
+
+
+   <LinearLayout
+    android:id="@+id/linea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+         />
+     </LinearLayout>
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/estadoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="8dp"
-        android:text="Estado"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
 
-    <Spinner
-        android:id="@+id/StateSpinner"
-        android:layout_width="368dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/spinnerEstadosBR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estadoTextView" />
+   <TextView
+       android:id="@+id/estadoTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Estado"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"/>
 
-    <View
-        android:id="@+id/dividerState"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="2dp"
-        android:background="#498492a6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StateSpinner" />
+   <Spinner
+       android:id="@+id/StateSpinner"
+       android:layout_width="368dp"
+       android:layout_height="36dp"
+       android:layout_marginTop="8dp"
+       android:entries="@array/spinnerEstadosBR"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/estadoTextView" />
 
-    <TextView
-        android:id="@+id/cityTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="8dp"
-        android:text="Estado"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dividerState" />
+   <View
+       android:id="@+id/dividerState"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginEnd="12dp"
+       android:layout_marginStart="12dp"
+       android:layout_marginTop="2dp"
+       android:background="#498492a6"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/StateSpinner" />
 
-    <Spinner
-        android:id="@+id/citySpinner"
-        android:layout_width="368dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/spinnerEstadosBR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
+   <TextView
+       android:id="@+id/cityTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Cidade"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/dividerState" />
 
-    <View
-        android:id="@+id/cityDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="2dp"
-        android:background="#498492a6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/citySpinner" />
+   <Spinner
+       android:id="@+id/citySpinner"
+       android:layout_width="368dp"
+       android:layout_height="36dp"
+       android:layout_marginTop="8dp"
+       android:entries="@array/spinnerEstadosBR"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
 
-    <TextView
-        android:id="@+id/neighborhoodTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="8dp"
-        android:text="Estado"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityDivider" />
+   <View
+       android:id="@+id/cityDivider"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginEnd="12dp"
+       android:layout_marginStart="12dp"
+       android:layout_marginTop="2dp"
+       android:background="#498492a6"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/citySpinner" />
 
-    <Spinner
-        android:id="@+id/neighborhoodSpinner"
-        android:layout_width="368dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/spinnerEstadosBR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/neighborhoodTextView" />
+   <TextView
+       android:id="@+id/neighborhoodTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Bairro"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/cityDivider" />
 
-    <View
-        android:id="@+id/neighborhoodDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="2dp"
-        android:background="#498492a6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/neighborhoodSpinner" />
+   <Spinner
+       android:id="@+id/neighborhoodSpinner"
+       android:layout_width="368dp"
+       android:layout_height="36dp"
+       android:layout_marginTop="8dp"
+       android:entries="@array/spinnerEstadosBR"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/neighborhoodTextView" />
 
-    <TextView
-        android:id="@+id/systemTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="8dp"
-        android:text="Sistema"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/neighborhoodDivider" />
+   <View
+       android:id="@+id/neighborhoodDivider"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginEnd="12dp"
+       android:layout_marginStart="12dp"
+       android:layout_marginTop="2dp"
+       android:background="#498492a6"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/neighborhoodSpinner" />
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView4"
-        android:layout_width="fill_parent"
-        android:layout_height="36dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="AutoCompleteTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/systemTextView" />
+   <TextView
+       android:id="@+id/systemTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Sistema"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/neighborhoodDivider" />
 
-</android.support.constraint.ConstraintLayout>
+   <AutoCompleteTextView
+       android:id="@+id/systemAutoComplete"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="8dp"
+       android:layout_marginStart="8dp"
+       android:text="Dungeons and Dragons 5.0"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/systemTextView" />
+
+   <TextView
+       android:id="@+id/cenaryTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Cenario"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/systemAutoComplete" />
+
+   <AutoCompleteTextView
+       android:id="@+id/cenaryAutoComplete"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="8dp"
+       android:layout_marginStart="8dp"
+       android:text="Dungeons and Dragons 5.0"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/cenaryTextView" />
+
+   <TextView
+       android:id="@+id/gameDayTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Dias de jogo"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/cenaryAutoComplete" />
+
+   <Spinner
+       android:id="@+id/gameDaySpinner"
+       android:layout_width="368dp"
+       android:layout_height="36dp"
+       android:layout_marginTop="8dp"
+       android:entries="@array/spinnerGameDays"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/gameDayTextView" />
+
+   <View
+       android:id="@+id/gameDayDivider"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginEnd="12dp"
+       android:layout_marginStart="12dp"
+       android:layout_marginTop="2dp"
+       android:background="#498492a6"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/gameDaySpinner" />
+
+   <TextView
+       android:id="@+id/otherPreferencesTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Outras preferencias"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/gameDayDivider" />
+
+   <CheckBox
+       android:id="@+id/begginersCheckBox"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Aceita Iniciantes"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/otherPreferencesTextView" />
+
+   <CheckBox
+       android:id="@+id/womenCheckBox"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="28dp"
+       android:text="Feminina"
+       app:layout_constraintLeft_toRightOf="@+id/begginersCheckBox"
+       app:layout_constraintStart_toEndOf="@+id/begginersCheckBox"
+       app:layout_constraintTop_toBottomOf="@+id/otherPreferencesTextView" />
+
+   <CheckBox
+       android:id="@+id/childrenCheckBox"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Aceita Crianças"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/begginersCheckBox" />
+
+   <Button
+       android:id="@+id/button"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:textSize="15dp"
+       android:text="Criar Mesa"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/childrenCheckBox" />
+
+  </android.support.constraint.ConstraintLayout>
+ </ScrollView>
+</android.widget.LinearLayout>
