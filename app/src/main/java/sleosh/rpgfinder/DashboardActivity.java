@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 
 import classes.Board;
+import classes.BoardDB;
 import custom.elements.BoardDashboardAdapter;
 
 public class DashboardActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -33,6 +34,7 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
 
         ListView listView = (ListView) findViewById(R.id.myBoardsListView);
 
+        BoardDB database = new BoardDB(this);
 
         ArrayList<String> mesasName = new ArrayList<>();
 
@@ -56,7 +58,7 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
 
         system.add("D&D 3.5");
         system.add("D&D 5.0");
-        system.add("3D&T");
+        system.add("3DT");
 
         ArrayList<String> scenary = new ArrayList<>();
 
@@ -106,32 +108,40 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
         icons.add(0x7f0c0005);
         icons.add(0x7f0c000a);
 
-        boards = new ArrayList<>();
         for(int i = 0; i < 3; i++){
-            Board a = new Board(i);
+            Board a = new Board(i+1);
             a.setName(mesasName.get(i));
-            a.setPublicLocal(publicLocal.get(i));
-            a.setRating(rating.get(i));
+        //    a.setPublicLocal(publicLocal.get(i));
+          //  a.setRating(rating.get(i));
             a.setLimitPeople(limitPeople.get(i));
-            a.setBegginer(begginer.get(i));
-            a.setChildren(children.get(i));
-            a.setFemale(female.get(i));
+        //    a.setBegginer(begginer.get(i));
+         //   a.setChildren(children.get(i));
+       //     a.setFemale(female.get(i));
             a.setScenary(scenary.get(i));
             a.setSessionDay(sessionDays.get(i));
             a.setLocal(locals.get(i));
             a.setSystem(system.get(i));
             a.setIcon(icons.get(i));
-            boards.add(a);
+            database.save(a);
         }
 
+        boards = database.BoardsToList();
+
         listView.setAdapter(new BoardDashboardAdapter(this, boards));
-        listView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Board a = boards.get(position);
+                Intent i = new Intent(DashboardActivity.this,BoardActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Board a = boards.get(position);
-        Toast.makeText(this, "Clique na Mesa: " + a.getName(), Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(DashboardActivity.this,BoardActivity.class);
+        startActivity(i);
     }
 
     @Override
@@ -143,24 +153,18 @@ public class DashboardActivity extends AppCompatActivity implements AdapterView.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent i;
+
         switch (item.getItemId()) {
             case R.id.search:
-                // User chose the "Settings" item, show the app settings UI...
-                return true;
-
-            case R.id.profile:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
-                return true;
-
-            case R.id.boards:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
+                i = new Intent(DashboardActivity.this, SearchActivity.class);
+                startActivity(i);
                 return true;
 
             case R.id.addBoard:
 
-                Intent i = new Intent(DashboardActivity.this,activity_board_add.class);
+                i = new Intent(DashboardActivity.this,activity_board_add.class);
                 startActivity(i);
 
                 return true;

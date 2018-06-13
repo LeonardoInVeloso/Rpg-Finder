@@ -181,12 +181,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="   Somos um grupo experiente de jogadores D&D, dispostos a auxiliar qualquer jogador novato mesmo sem qualquer experiência.
-    Não toleramos qualquer tipo de ofensa e racismo em nossa mesa, tendo como consequencia expulsão imediata do grupo.
-    Jogamos no mundo de Tormenta, da forma como foi montado antes do Tormenta RPG."
+                    android:text="Somos um grupo experiente de jogadores DeD, dispostos a auxiliar qualquer jogador novato mesmo sem qualquer experiência.    Não toleramos qualquer tipo de ofensa e racismo em nossa mesa, tendo como consequencia expulsão imediata do grupo.Jogamos no mundo de Tormenta, da forma como foi montado antes do Tormenta RPG."
                     android:textColor="#47525E"
                     android:textSize="15dp"
                     android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/JoinButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Socilitar entrada" />
 
             </LinearLayout>
 

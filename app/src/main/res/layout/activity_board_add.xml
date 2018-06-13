@@ -170,6 +170,28 @@
        app:layout_constraintTop_toBottomOf="@+id/cenaryTextView" />
 
    <TextView
+       android:id="@+id/nameTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="15dp"
+       android:text="Name"
+       android:textSize="16sp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/cenaryAutoComplete" />
+
+   <AutoCompleteTextView
+       android:id="@+id/nameAutoComplete"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="8dp"
+       android:layout_marginStart="8dp"
+       android:text="Nome da mesa"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+   <TextView
        android:id="@+id/gameDayTextView"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -178,7 +200,7 @@
        android:text="Dias de jogo"
        android:textSize="16sp"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/cenaryAutoComplete" />
+       app:layout_constraintTop_toBottomOf="@+id/nameAutoComplete" />
 
    <Spinner
        android:id="@+id/gameDaySpinner"
@@ -240,7 +262,7 @@
        app:layout_constraintTop_toBottomOf="@+id/begginersCheckBox" />
 
    <Button
-       android:id="@+id/button"
+       android:id="@+id/saveButton"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:textSize="15dp"
