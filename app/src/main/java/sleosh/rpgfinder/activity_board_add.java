@@ -1,5 +1,6 @@
 package sleosh.rpgfinder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 import classes.Board;
 import classes.BoardDB;
 
-public class activity_board_add extends AppCompatActivity implements View.OnClickListener {
+public class activity_board_add extends AppCompatActivity {
 
     Spinner state;
     Spinner city;
@@ -24,13 +25,13 @@ public class activity_board_add extends AppCompatActivity implements View.OnClic
     AutoCompleteTextView cenary;
     Spinner gameDay;
     AutoCompleteTextView name;
-
+    Context cont = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board_add);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
-        Button btnClick = (Button) findViewById(R.id.saveButton);
+       // Button btnClick = (Button) findViewById(R.id.saveButton);
         setSupportActionBar(myToolbar);
         state = (Spinner) findViewById(R.id.StateSpinner);
         city = (Spinner) findViewById(R.id.citySpinner);
@@ -39,7 +40,7 @@ public class activity_board_add extends AppCompatActivity implements View.OnClic
         cenary = (AutoCompleteTextView) findViewById(R.id.cenaryAutoComplete);
         gameDay = (Spinner) findViewById(R.id.gameDaySpinner);
         name = (AutoCompleteTextView) findViewById(R.id.nameAutoComplete);
-        btnClick.setOnClickListener(this);
+
     }
 
     @Override
@@ -79,8 +80,7 @@ public class activity_board_add extends AppCompatActivity implements View.OnClic
         }
     }
 
-    @Override
-    public void onClick(View v) {
+    public void but(View v) {
 
         Board board = new Board(10);
 
@@ -97,11 +97,12 @@ public class activity_board_add extends AppCompatActivity implements View.OnClic
         board.setSessionDay(gameDay.getSelectedItem().toString());
 
 
-        BoardDB boarddb = new BoardDB(this);
+        BoardDB boarddb = new BoardDB(cont);
 
         boarddb.save(board);
 
-        Intent i = new Intent(activity_board_add.this, DashboardActivity.class);
-        startActivity(i);
+       Intent i = new Intent(activity_board_add.this, DashboardActivity.class);
+       startActivity(i);
     }
+
 }

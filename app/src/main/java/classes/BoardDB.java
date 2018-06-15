@@ -38,7 +38,6 @@ public class BoardDB extends SQLiteOpenHelper{
         try {
             ContentValues values = new ContentValues();
 
-            values.put("id", board.getId());
             values.put("name", board.getName());
             values.put("system", board.getSystem());
             values.put("scenary", board.getScenary());
@@ -52,7 +51,7 @@ public class BoardDB extends SQLiteOpenHelper{
             values.put("children", board.isChildren() == true ? 1 : 0);
             values.put("begginer ", board.isBegginer() == true ? 1 : 0);
             values.put("active", board.isActive() == true ? 1 : 0);
-            values.put("summary", board.getSummary());
+//            values.put("summary", board.getSummary());
 
             db.insert("boards", "", values);
             return String.valueOf(board.getId());
@@ -82,7 +81,7 @@ public class BoardDB extends SQLiteOpenHelper{
             values.put("children", board.isChildren());
             values.put("begginer ", board.isBegginer());
             values.put("active", board.isActive());
-            values.put("summary", board.getSummary());
+         //   values.put("summary", board.getSummary());
 
             db.update("aluno", values, "id="+board.getId(),null);
             //db.update("aluno", values, "matricula=?",new String[]{aluno.getMatricula()});
