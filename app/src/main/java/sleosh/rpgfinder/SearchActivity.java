@@ -139,24 +139,18 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
         switch (item.getItemId()) {
-            case R.id.search:
-                // User chose the "Settings" item, show the app settings UI...
-                return true;
-
-            case R.id.profile:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
-                return true;
 
             case R.id.boards:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
+
+                 i = new Intent(SearchActivity.this,DashboardActivity.class);
+                startActivity(i);
                 return true;
 
             case R.id.addBoard:
 
-                Intent i = new Intent(SearchActivity.this,activity_board_add.class);
+                 i = new Intent(SearchActivity.this,activity_board_add.class);
                 startActivity(i);
 
                 return true;

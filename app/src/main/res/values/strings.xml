@@ -17,7 +17,37 @@
         <item>Rio de Janeiro</item>
         <item>São Paulo</item>
         <item>Bahia</item>
+        <item>Ceará</item>
+        <item>Sergipe</item>
+        <item>Rio Grande do sul</item>
+        <item>Rio Grande do Norte</item>
+        <item>Amapá</item>
+        <item>Pernambuco</item>
         <item>Santa Catarina</item>
+    </string-array>
+    <string-array name="spinnerCidadesBR">
+        <item>Rio de Janeiro</item>
+        <item>Duque de Caxias</item>
+        <item>Vassouras</item>
+        <item>Angra dos Reis</item>
+        <item>Nova Friburgo</item>
+        <item>Petrópolis</item>
+        <item>Teresopolis</item>
+        <item>Guapimirim</item>
+        <item>Araruama</item>
+        <item>Barra do Pirai</item>
+    </string-array>
+    <string-array name="spinnerBairrosBR">
+        <item>Tijuca</item>
+        <item>Centro</item>
+        <item>Olaria</item>
+        <item>Ramos</item>
+        <item>Copacabana</item>
+        <item>Ipanema</item>
+        <item>Recreio</item>
+        <item>Botafogo</item>
+        <item>Flamengo</item>
+        <item>Bonsucesso</item>
     </string-array>
     <string-array name="spinnerFrequencyGameDays">
         <item>Semanalmente</item>

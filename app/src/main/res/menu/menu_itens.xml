@@ -3,9 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/profile"
-        android:title="Perfil"
-        app:showAsAction="never"/>
     <item android:id="@+id/boards"
         android:title="Minhas mesas"
         app:showAsAction="never"/>

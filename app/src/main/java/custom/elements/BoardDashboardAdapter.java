@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 import classes.Board;
 import sleosh.rpgfinder.R;
@@ -82,7 +83,18 @@ public class BoardDashboardAdapter extends BaseAdapter {
         system.setText(a.getSystem());
         scenary.setText(a.getScenary());
         days.setText(a.getSessionDay());
-        img.setImageResource(a.getIcon());
+        Random r = new Random();
+        int i1 = r.nextInt(4 - 1);
+        if(i1 == 1){
+            img.setImageResource(R.mipmap.barbarian_icom_round);
+        }else if(i1 == 2){
+            img.setImageResource(R.mipmap.demi_rpg_round);
+        }else if(i1 == 3){
+            img.setImageResource(R.mipmap.dragon_party_round);
+        }else if(i1 == 4){
+            img.setImageResource(R.mipmap.party_round);
+        }
+
         img.setBorderColor(Color.parseColor(color));
         return view;
     }

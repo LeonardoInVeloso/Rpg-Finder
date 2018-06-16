@@ -75,7 +75,7 @@
        android:layout_width="368dp"
        android:layout_height="36dp"
        android:layout_marginTop="8dp"
-       android:entries="@array/spinnerEstadosBR"
+       android:entries="@array/spinnerCidadesBR"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
@@ -108,7 +108,7 @@
        android:layout_width="368dp"
        android:layout_height="36dp"
        android:layout_marginTop="8dp"
-       android:entries="@array/spinnerEstadosBR"
+       android:entries="@array/spinnerBairrosBR"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/neighborhoodTextView" />
@@ -164,7 +164,7 @@
        android:layout_height="wrap_content"
        android:layout_marginEnd="8dp"
        android:layout_marginStart="8dp"
-       android:text="Dungeons and Dragons 5.0"
+       android:text="Tormenta"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/cenaryTextView" />

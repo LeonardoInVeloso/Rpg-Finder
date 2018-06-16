@@ -131,4 +131,39 @@ public class BoardDB extends SQLiteOpenHelper{
         return boards;
     }
 
+    public Board getBoard(int id){
+        SQLiteDatabase db = getReadableDatabase();
+        Board board = null;
+        try {
+            //Cursor c = db.query("aluno", null, null, null, null, null, null);
+            //rawQuery("SELECT id, name FROM people WHERE name = ? AND id = ?", new String[] {"David", "2"});
+            String idString = String.valueOf(id);
+            String selectQuery = " select * from boards where id like " + idString;
+            Cursor c = db.rawQuery(selectQuery, null);
+            if(c.moveToFirst()){
+                board = new Board(c.getInt(c.getColumnIndex("id")));
+
+                    board.setName(c.getString(c.getColumnIndex("name")));
+                    board.setSystem(c.getString(c.getColumnIndex("system")));
+                    board.setScenary(c.getString(c.getColumnIndex("scenary")));
+                    board.setSessionDay(c.getString(c.getColumnIndex("sessionDay")));
+                    //  board.setSummary(c.getString(c.getColumnIndex("summary")));
+                    board.setRating(c.getDouble(c.getColumnIndex("rating")));
+                    board.setLocal(c.getString(c.getColumnIndex("local")));
+                    board.setPublicLocal(c.getInt(c.getColumnIndex("publicLocal")) == 1 ? true : false);
+                    board.setLimitPeople(c.getInt(c.getColumnIndex("limitPeople")));
+                    board.setSessions(c.getInt(c.getColumnIndex("sessions")));
+                    board.setActive(c.getInt(c.getColumnIndex("active")) == 1 ? true : false);
+                    board.setFemale(c.getInt(c.getColumnIndex("female")) == 1 ? true : false);
+                    board.setChildren(c.getInt(c.getColumnIndex("children")) == 1 ? true : false);
+                    board.setBegginer(c.getInt(c.getColumnIndex("begginer")) == 1 ? true : false);
+
+                }
+        }
+        finally {
+            db.close();
+        }
+        return board;
+    }
+
 }

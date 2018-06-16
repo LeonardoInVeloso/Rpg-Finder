@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RPGFinder2.iml" filepath="$PROJECT_DIR$/RPGFinder2.iml" />
+      <module fileurl="file://C:\Users\Sleosh\AndroidStudioProjects\RpgFinder\RPGFinder2.iml" filepath="C:\Users\Sleosh\AndroidStudioProjects\RpgFinder\RPGFinder2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpgFinder.iml" filepath="$PROJECT_DIR$/rpgFinder.iml" />
     </modules>
   </component>
 </project>

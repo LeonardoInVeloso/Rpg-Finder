@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -26,6 +27,10 @@ public class activity_board_add extends AppCompatActivity {
     Spinner gameDay;
     AutoCompleteTextView name;
     Context cont = this;
+    CheckBox female;
+    CheckBox children;
+    CheckBox beginer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,9 @@ public class activity_board_add extends AppCompatActivity {
         cenary = (AutoCompleteTextView) findViewById(R.id.cenaryAutoComplete);
         gameDay = (Spinner) findViewById(R.id.gameDaySpinner);
         name = (AutoCompleteTextView) findViewById(R.id.nameAutoComplete);
+        female = (CheckBox) findViewById(R.id.womenCheckBox);
+        beginer = (CheckBox) findViewById(R.id.begginersCheckBox);
+        children = (CheckBox) findViewById(R.id.childrenCheckBox);
 
     }
 
@@ -52,23 +60,17 @@ public class activity_board_add extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent i;
         switch (item.getItemId()) {
             case R.id.search:
-                // User chose the "Settings" item, show the app settings UI...
-                return true;
-
-            case R.id.profile:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
+                i = new Intent(activity_board_add.this, SearchActivity.class);
+                startActivity(i);
                 return true;
 
             case R.id.boards:
-                Intent i = new Intent(activity_board_add.this, DashboardActivity.class);
+                i = new Intent(activity_board_add.this, DashboardActivity.class);
                 startActivity(i);
-
-                return true;
-
-            case R.id.addBoard:
 
                 return true;
 
@@ -84,7 +86,7 @@ public class activity_board_add extends AppCompatActivity {
 
         Board board = new Board(10);
 
-        String local = state.getSelectedItem().toString() + city.getSelectedItem().toString() + neighborhood.getSelectedItem().toString();
+        String local = neighborhood.getSelectedItem().toString() + " | " + state.getSelectedItem().toString() + " - " + city.getSelectedItem().toString();
 
         board.setLocal(local);
 
@@ -96,6 +98,15 @@ public class activity_board_add extends AppCompatActivity {
 
         board.setSessionDay(gameDay.getSelectedItem().toString());
 
+        if(beginer.isChecked()) {
+            board.setBegginer(true);
+        }
+        if(female.isChecked()) {
+            board.setFemale(true);
+        }
+        if(children.isChecked()) {
+            board.setChildren(true);
+        }
 
         BoardDB boarddb = new BoardDB(cont);
 
